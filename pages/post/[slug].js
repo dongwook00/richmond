@@ -6,7 +6,7 @@ export async function getStaticPaths() {
   const files = fs.readdirSync("posts");
   const paths = files.map((fileName) => ({
     params: {
-      slug: fileName.replace("md", ""),
+      slug: fileName.replace(".md", ""),
     },
   }));
   return {
