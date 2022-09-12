@@ -1,6 +1,5 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Image from "next/image";
 import Link from "next/link";
 
 export async function getStaticProps() {
@@ -24,6 +23,7 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
+  console.log("posts", posts);
   return (
     <div className="flex flex-col dark:bg-black">
       {posts.map(({ slug, frontmatter }) => (
