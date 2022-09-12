@@ -1,6 +1,7 @@
 import fs from "fs";
 import matter from "gray-matter";
 import Link from "next/link";
+import Post from "../components/Post";
 
 export async function getStaticProps() {
   const files = fs.readdirSync("posts");
@@ -23,18 +24,11 @@ export async function getStaticProps() {
 }
 
 export default function Home({ posts }) {
-  console.log("posts", posts);
   return (
-    <div className="flex flex-col dark:bg-black">
+    <>
       {posts.map(({ slug, frontmatter }) => (
-        <article key={slug} className="">
-          <Link href={`/post/${slug}`}>
-            <a>
-              <h1 className="p-4">{frontmatter.title}</h1>
-            </a>
-          </Link>
-        </article>
+        <Post key={slug} slug={slug} frontmatter={frontmatter} />
       ))}
-    </div>
+    </>
   );
 }

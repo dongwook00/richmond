@@ -7,7 +7,7 @@ export default function Layout({ children }) {
       <div className="mx-auto max-w-2xl py-11 px-6">
         <Header />
         <Aside />
-        <main className="container mx-auto flex-1">{children}</main>
+        <main>{children}</main>
       </div>
     </div>
   );
