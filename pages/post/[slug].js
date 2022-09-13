@@ -28,9 +28,14 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function PostPage({ frontmatter, content }) {
   return (
-    <div className="prose mx-auto">
-      <h1>{frontmatter.title}</h1>
+    <article className="prose mx-auto">
+      <header>
+        <h1 className="mt-14 text-[2.5rem] font-black">{frontmatter.title}</h1>
+        <p className="text-[0.83255rem] leading-7 -mt-[1.4rem] mb-7">
+          {frontmatter.date}
+        </p>
+      </header>
       <div dangerouslySetInnerHTML={{ __html: md().render(content) }} />
-    </div>
+    </article>
   );
 }

@@ -1,6 +1,5 @@
 import fs from "fs";
 import matter from "gray-matter";
-import Link from "next/link";
 import Post from "../components/Post";
 
 export async function getStaticProps() {
