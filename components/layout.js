@@ -12,14 +12,14 @@ export default function Layout({ children }) {
         {isHome ? (
           <>
             <Header />
-            <Aside />
+            <Aside isHome={isHome} />
             <main>{children}</main>
           </>
         ) : (
           <>
             <Header />
             <main>{children}</main>
-            <Aside />
+            <Aside isHome={isHome} />
           </>
         )}
       </div>

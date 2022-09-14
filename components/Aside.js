@@ -1,8 +1,18 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Aside() {
+export default function Aside({ isHome }) {
   return (
     <aside>
+      {!isHome && (
+        <Link href="/">
+          <a>
+            <h3 className="text-[1.45rem] leading-[1.1] font-black mt-2 mb-7">
+              Untitled
+            </h3>
+          </a>
+        </Link>
+      )}
       <div className="flex mb-14 gap-x-3.5">
         <Image
           className="rounded-full"
