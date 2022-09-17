@@ -3,10 +3,10 @@ import Link from "next/link";
 
 export default function Aside({ isHome }) {
   return (
-    <aside>
+    <aside className={!isHome && "mt-28"}>
       {!isHome && (
         <Link href="/">
-          <a>
+          <a className="mt-">
             <h3 className="text-[1.45rem] leading-[1.1] font-black mt-2 mb-7">
               Untitled
             </h3>
