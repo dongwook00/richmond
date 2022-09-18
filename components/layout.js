@@ -5,7 +5,6 @@ import Nav from "./Nav";
 
 export default function Layout({ children }) {
   const router = useRouter();
-  console.log("laout", router.pathname, children);
   const isHome = router.pathname === "/";
 
   return (
@@ -22,7 +21,7 @@ export default function Layout({ children }) {
             <Header isHome={isHome} />
             <main>{children}</main>
             <Aside isHome={isHome} />
-            <Nav />
+            <Nav slug={router.query.slug} />
           </>
         )}
       </div>

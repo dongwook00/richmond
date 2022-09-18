@@ -12,7 +12,7 @@ export async function getStaticPaths() {
       slug: fileName.replace(".md", ""),
     },
   }));
-  console.log("path", paths);
+
   return {
     paths,
     fallback: false,
@@ -34,6 +34,7 @@ export async function getStaticProps({ params: { slug } }) {
 
 export default function PostPage({ frontmatter, content, posts }) {
   const { postContext } = useAppContext();
+
   useEffect(() => {
     postContext.posts && postContext.setPosts(posts);
   }, [postContext, posts]);
