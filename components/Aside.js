@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function Aside({ isHome }) {
   return (
-    <aside className={!isHome && "mt-28"}>
+    <aside>
       {!isHome && (
         <Link href="/">
           <a className="mt-">

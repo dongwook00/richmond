@@ -1,6 +1,9 @@
 import Link from "next/link";
+import { useAppContext } from "../context/AppContext";
 
-export default function Lav() {
+export default function Nav() {
+  const foo = useAppContext();
+  console.log("nav", foo);
   return (
     <nav>
       <ul className="flex justify-between">
