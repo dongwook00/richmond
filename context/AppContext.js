@@ -1,11 +1,24 @@
-import { createContext, useContext } from "react";
+import { createContext, useContext, useState } from "react";
 
-export const AppContext = createContext();
+export const AppContext = createContext({
+  postContext: {
+    posts: [],
+    setPosts: () => [],
+  },
+});
 
 export function AppWrapper({ children }) {
-  let foo = "hello";
+  const [posts, setPosts] = useState([]);
+  const postContext = {
+    posts,
+    setPosts,
+  };
 
-  return <AppContext.Provider value={foo}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={{ postContext }}>
+      {children}
+    </AppContext.Provider>
+  );
 }
 
 export function useAppContext() {

@@ -2,6 +2,8 @@ import fs from "fs";
 import md from "markdown-it";
 import getPosts from "../../util/getPosts";
 import getPost from "../../util/getPost";
+import { useAppContext } from "../../context/AppContext";
+import { useEffect } from "react";
 
 export async function getStaticPaths() {
   const files = fs.readdirSync("posts");
@@ -25,11 +27,17 @@ export async function getStaticProps({ params: { slug } }) {
     props: {
       frontmatter,
       content,
+      posts,
     },
   };
 }
 
-export default function PostPage({ frontmatter, content }) {
+export default function PostPage({ frontmatter, content, posts }) {
+  const { postContext } = useAppContext();
+  useEffect(() => {
+    postContext.posts && postContext.setPosts(posts);
+  }, [postContext, posts]);
+
   return (
     <article className="prose mx-auto">
       <header>
