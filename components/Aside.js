@@ -1,9 +1,10 @@
 import Image from "next/image";
 import Link from "next/link";
+import classNames from "classnames";
 
 export default function Aside({ isHome }) {
   return (
-    <aside>
+    <aside className={classNames({ "mt-16 pt-7": !isHome })}>
       {!isHome && (
         <Link href="/">
           <a className="mt-">

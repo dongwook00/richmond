@@ -2,6 +2,7 @@ import { useRouter } from "next/router";
 import Header from "./Header";
 import Aside from "./Aside";
 import Nav from "./Nav";
+import Footer from "./Footer";
 
 export default function Layout({ children }) {
   const router = useRouter();
@@ -15,6 +16,7 @@ export default function Layout({ children }) {
             <Header isHome={isHome} />
             <Aside isHome={isHome} />
             <main>{children}</main>
+            <Footer />
           </>
         ) : (
           <>
