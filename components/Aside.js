@@ -8,7 +8,7 @@ export default function Aside({ isHome }) {
       {!isHome && (
         <Link href="/">
           <a className="mt-">
-            <h3 className="text-[1.45rem] leading-[1.1] font-black mt-2 mb-7">
+            <h3 className="text-[1.45rem] leading-[1.1] font-black mt-2 mb-7 text-sky-300">
               Untitled
             </h3>
           </a>

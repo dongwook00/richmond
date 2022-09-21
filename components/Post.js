@@ -6,7 +6,7 @@ export default function Post({ slug, frontmatter }) {
       <header>
         <Link href={`/post/${slug}`}>
           <a>
-            <h3 className="text-3xl font-black mt-14 mb-2">
+            <h3 className="text-3xl font-black mt-14 mb-2 text-sky-500">
               {frontmatter.title}
             </h3>
           </a>

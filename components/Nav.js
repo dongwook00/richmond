@@ -17,8 +17,8 @@ export default function Nav({ slug }) {
 
     if (currentIndex === 0) {
       navEl = (
-        <ul className="flex justify-end underline">
-          <li>
+        <ul className="text-sky-500 flex justify-end underline">
+          <li className="hover:text-sky-600">
             <Link href={`/post/${posts[currentIndex + 1].slug}`}>
               <a>{posts[currentIndex + 1].frontmatter.title} →</a>
             </Link>
@@ -27,8 +27,8 @@ export default function Nav({ slug }) {
       );
     } else if (currentIndex === posts.length - 1) {
       navEl = (
-        <ul className="flex justify-start underline">
-          <li>
+        <ul className="text-sky-500 flex justify-start underline">
+          <li className="hover:text-sky-600">
             <Link href={`/post/${posts[currentIndex - 1].slug}`}>
               <a>← {posts[currentIndex - 1].frontmatter.title}</a>
             </Link>
@@ -37,13 +37,13 @@ export default function Nav({ slug }) {
       );
     } else {
       navEl = (
-        <ul className="flex flex-col gap-y-4 underline">
-          <li className="self-start">
+        <ul className="text-sky-500 flex flex-col gap-y-4 underline">
+          <li className="self-start hover:text-sky-600 ">
             <Link href={`/post/${posts[currentIndex - 1].slug}`}>
               <a>← {posts[currentIndex - 1].frontmatter.title}</a>
             </Link>
           </li>
-          <li className="self-end">
+          <li className="self-end hover:text-sky-600">
             <Link href={`/post/${posts[currentIndex + 1].slug}`}>
               <a>{posts[currentIndex - 1].frontmatter.title} →</a>
             </Link>
@@ -54,7 +54,6 @@ export default function Nav({ slug }) {
     return navEl;
   }, [currentIndex, posts]);
 
-  console.log("nav", currentIndex);
   return (
     <nav>
       <RenderNav />
