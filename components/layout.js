@@ -9,7 +9,7 @@ export default function Layout({ children }) {
   const isHome = router.pathname === "/";
 
   return (
-    <div className="min-h-screen">
+    <div className="bg-white dark:bg-slate-800 transition min-h-screen">
       <div className="mx-auto max-w-2xl py-11 px-6">
         {isHome ? (
           <>

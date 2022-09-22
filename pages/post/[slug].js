@@ -40,7 +40,7 @@ export default function PostPage({ frontmatter, content, posts }) {
   }, [postContext, posts]);
 
   return (
-    <article className="prose mx-auto">
+    <article className="prose mx-auto dark:prose-invert">
       <header>
         <h1 className="mt-14 text-[2.5rem] font-black">{frontmatter.title}</h1>
         <p className="text-[0.83255rem] leading-7 -mt-[1.4rem] mb-7">

@@ -6,14 +6,14 @@ export default function Post({ slug, frontmatter }) {
       <header>
         <Link href={`/post/${slug}`}>
           <a>
-            <h3 className="text-3xl font-black mt-14 mb-2 text-sky-500">
+            <h3 className="text-3xl font-black mt-14 mb-2 text-sky-500 dark:text-sky-400">
               {frontmatter.title}
             </h3>
           </a>
         </Link>
-        <small>{frontmatter.date}</small>
+        <small className="dark:text-white">{frontmatter.date}</small>
       </header>
-      <p>{frontmatter.metaDesc}</p>
+      <p className="dark:text-white">{frontmatter.metaDesc}</p>
     </article>
   );
 }

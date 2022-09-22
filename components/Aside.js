@@ -23,7 +23,7 @@ export default function Aside({ isHome }) {
           alt="profile"
           src="/images/profile.jpg"
         />
-        <p className="max-w-xs leading-relaxed mb-7">
+        <p className="dark:text-white max-w-xs leading-relaxed mb-7">
           프론트엔드 개발자
           <br />
           미국에서의 회사생활을 공유합니다

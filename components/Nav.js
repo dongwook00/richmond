@@ -17,7 +17,7 @@ export default function Nav({ slug }) {
 
     if (currentIndex === 0) {
       navEl = (
-        <ul className="text-sky-500 flex justify-end underline">
+        <ul className="text-sky-500 dark:text-sky-300 flex justify-end underline">
           <li className="hover:text-sky-600">
             <Link href={`/post/${posts[currentIndex + 1].slug}`}>
               <a>{posts[currentIndex + 1].frontmatter.title} →</a>
@@ -27,7 +27,7 @@ export default function Nav({ slug }) {
       );
     } else if (currentIndex === posts.length - 1) {
       navEl = (
-        <ul className="text-sky-500 flex justify-start underline">
+        <ul className="text-sky-500 dark:text-sky-300 flex justify-start underline">
           <li className="hover:text-sky-600">
             <Link href={`/post/${posts[currentIndex - 1].slug}`}>
               <a>← {posts[currentIndex - 1].frontmatter.title}</a>
@@ -37,7 +37,7 @@ export default function Nav({ slug }) {
       );
     } else {
       navEl = (
-        <ul className="text-sky-500 flex flex-col gap-y-4 underline">
+        <ul className="text-sky-500 dark:text-sky-300 flex flex-col gap-y-4 underline">
           <li className="self-start hover:text-sky-600 ">
             <Link href={`/post/${posts[currentIndex - 1].slug}`}>
               <a>← {posts[currentIndex - 1].frontmatter.title}</a>
