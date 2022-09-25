@@ -30,7 +30,7 @@ export default function Header({ isHome }) {
         </a>
       </Link>
       <div
-        className="text-2xl cursor-pointer"
+        className="text-[2.2rem] cursor-pointer"
         onClick={() => setToggleDarkmode(!toggleDarkmode)}
       >
         {toggleDarkmode ? "🌛" : "☀️"}

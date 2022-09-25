@@ -1,14 +1,18 @@
 import { AppWrapper } from "../context/AppContext";
+import HTMLHead from "../components/HTMLHead";
 import Layout from "../components/Layout";
-import "../styles/globals.css";
 
+import "../styles/globals.css";
 function MyApp({ Component, pageProps }) {
   return (
-    <AppWrapper>
-      <Layout>
-        <Component {...pageProps} />
-      </Layout>
-    </AppWrapper>
+    <>
+          <HTMLHead />
+         <AppWrapper>
+        <Layout>
+          <Component {...pageProps} />
+        </Layout>
+      </AppWrapper>
+    </>
   );
 }
 
